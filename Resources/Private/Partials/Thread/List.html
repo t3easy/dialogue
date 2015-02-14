@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<head>
+	<meta charset="utf-8">
+	<title>Thread List Partial</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+<f:section name="main">
+	<f:if condition="{threads}">
+		<f:then>
+			<ol>
+				<f:for each="{threads}" as="thread">
+					<li>
+						<h3>
+							<f:link.action controller="Post" action="list" arguments="{thread:thread}">
+								{thread.subject}
+							</f:link.action>
+						</h3>
+						<div>
+							<f:link.action action="edit" arguments="{thread:thread}">Edit</f:link.action>
+							&nbsp;
+							<f:link.action action="delete" arguments="{thread:thread}">Delete</f:link.action>
+						</div>
+					</li>
+				</f:for>
+			</ol>
+		</f:then>
+		<f:else>
+			<f:if condition="{board.forbidThreads} != 1">
+				<p>No threads in this board.</p>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>
+</body>
+</html>

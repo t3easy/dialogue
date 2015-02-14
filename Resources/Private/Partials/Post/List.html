@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<head>
+	<meta charset="utf-8">
+	<title>Post List Partial</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+<f:section name="main">
+	<f:if condition="{posts}">
+		<ol class="posts">
+			<f:for each="{posts}" as="post">
+				<li>
+					<div>{post.message}</div>
+					<div>
+						{post.creationDate -> f:format.date()} {post.modificationDate ->f:format.date()}
+						<f:link.action action="edit" arguments="{post:post}">Edit</f:link.action>
+						&nbsp;
+						<f:link.action action="delete" arguments="{post:post}">Delete</f:link.action>
+					</div>
+				</li>
+			</f:for>
+		</ol>
+	</f:if>
+</f:section>
+</body>
+</html>

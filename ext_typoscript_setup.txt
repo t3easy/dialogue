@@ -1,0 +1,34 @@
+config.tx_extbase {
+	persistence {
+		classes {
+			TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+				subclasses {
+					Tx_Dialogue_User = T3easy\Dialogue\Domain\Model\User
+				}
+			}
+			TYPO3\CMS\Extbase\Domain\Model\FileReference {
+				subclasses {
+					Tx_Dialogue_Attachment = T3easy\Dialogue\Domain\Model\Attachment
+				}
+			}
+			T3easy\Dialogue\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+				}
+			}
+			T3easy\Dialogue\Domain\Model\Attachment {
+				mapping {
+					tableName = sys_file_reference
+				}
+			}
+			T3easy\Dialogue\Domain\Model\Post {
+				mapping {
+					columns {
+						crdate.mapOnProperty = creationDate
+						tstamp.mapOnProperty = modificationDate
+					}
+				}
+			}
+		}
+	}
+}

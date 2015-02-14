@@ -1,0 +1,13 @@
+plugin.tx_dialogue {
+	view {
+		templateRootPaths.0 = {$plugin.tx_dialogue.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_dialogue.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_dialogue.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_dialogue.persistence.storagePid}
+	}
+	features {
+		rewrittenPropertyMapper = 1
+	}
+}

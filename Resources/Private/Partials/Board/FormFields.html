@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<head>
+	<meta charset="utf-8">
+	<title>Board FormFields Partial</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+<f:section name="main">
+	<label for="title">
+		<f:translate key="tx_dialogue_domain_model_board.title"/>
+		<span class="required">(required)</span>
+	</label><br/>
+	<f:form.textfield property="title"/>
+	<br/>
+	<label for="description">
+		<f:translate key="tx_dialogue_domain_model_board.description"/>
+	</label><br/>
+	<f:form.textarea property="description" cols="40" rows="15"/>
+</f:section>
+</body>
+</html>

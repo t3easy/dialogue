@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-11T21:14:43Z" product-name="dialogue">
+		<header/>
+		<body>
+			<trans-unit id="signature.description">
+				<source>signature</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
